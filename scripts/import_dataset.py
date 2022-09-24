@@ -49,3 +49,5 @@ for movie in merged_df.itertuples(index=False):
     new_movie.save()
 
     print('{} - {} was successfully added'.format(movie.movieId, title))
+
+print('Dataset import was successful!')

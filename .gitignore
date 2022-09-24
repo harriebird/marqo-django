@@ -7,7 +7,7 @@
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
+# db.sqlite3
 db.sqlite3-journal
 media
 
@@ -344,5 +344,6 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/python,django,pycharm+all
 
 # Custom Ignores
+src/static/
 links.csv
 movies.csv
