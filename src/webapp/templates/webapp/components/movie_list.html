@@ -1,0 +1,32 @@
+<table class="table table-dark table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for movie in movies.object_list %}
+        <tr>
+            <td><a href="{% url 'movie_detail' movie.pk %}" class="text-light">{{ movie.title }}</a></td>
+            <td>{{ movie.get_genres }}</td>
+            <td>{{ movie.year }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<nav class="mt-5">
+    <ul class="pagination pagination-lg justify-content-center">
+        {% if movies.has_previous %}
+            <li class="page-item"><a class="page-link text-light bg-dark" href="{% url 'movies_list' 1 %}"><span aria-hidden="true">&laquo;</span> First</a></li>
+            <li class="page-item"><a class="page-link text-light bg-dark" href="{% url 'movies_list' movies.previous_page_number %}">Previous</a></li>
+        {% endif %}
+        <li class="page-item"><span class="page-link text-light bg-dark">{{ movies.number }} of {{ movies.paginator.num_pages }}</span></li>
+        {% if movies.has_next %}
+            <li class="page-item"><a class="page-link text-light bg-dark" href="{% url 'movies_list' movies.next_page_number %}">Next</a></li>
+            <li class="page-item"><a class="page-link text-light bg-dark" href="{% url 'movies_list' movies.paginator.num_pages %}">Last <span aria-hidden="true">&raquo;</span></a></li>
+        {% endif %}
+    </ul>
+</nav>
