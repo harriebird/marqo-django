@@ -2,12 +2,11 @@
 
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requrements.txt
+pip install -r requirements.txt
 
-cd src
-python manage.py migrate
-python manage.py collectstatic
+python src/manage.py migrate
+python src/manage.py collectstatic
 
-cd ..
-python scripts/import_dataset.py
+# Skip the Dataset import since it takes so much timme
+# python scripts/import_dataset.py
 python scripts/index_marqo.py
