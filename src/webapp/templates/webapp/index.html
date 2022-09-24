@@ -1,0 +1,8 @@
+{% extends 'webapp/base.html' %}
+{% block content %}
+    <div class="my-5 container text-center">
+        <h1 class="fw-bold">Marqo Django</h1>
+        <p class="fs-4">Simple Marqo demonstration with Django using MovieLens 25M Dataset.</p>
+    </div>
+    {% include 'webapp/components/movie_list.html' %}
+{% endblock %}
