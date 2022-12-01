@@ -26,6 +26,7 @@ for movie in movies:
     }])
     print('{} - {} was added.'.format(movie.pk, movie.title))
 
-mq.index('movies-index').add_documents(documents, device='cpu', processes=8, batch_size=100)
+mq.index('movies-index').add_documents(documents, device='cpu', processes=8, server_batch_size=100,
+                                       client_batch_size=100)
 
 print('movies-index was successfully created! enjoy!')

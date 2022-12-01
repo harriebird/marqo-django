@@ -4,8 +4,12 @@ A simple Django web application demonstrating [marqo.ai](https://www.marqo.ai/).
 
 ## Setup
 1. Clone this repository 
-2. Install marqo using the command below (make sure Docker is already installed):
-   * `docker rm -f marqo;docker run --name marqo -it --privileged -dp 8882:8882 --add-host host.docker.internal:host-gateway marqoai/marqo:0.0.3`
+2. Install marqo using the commands below (make sure Docker is already installed):
+    ```bash
+    docker rm -f marqo;
+    docker pull marqoai/marqo:latest;
+    docker run --name marqo -it --privileged -dp 8882:8882 --add-host host.docker.internal:host-gateway marqoai/marqo:latest
+    ```
 3. Run `install` on the terminal to set up this project.
 
 ## Running the Project
